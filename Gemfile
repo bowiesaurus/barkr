@@ -6,6 +6,7 @@ group :test, :development do
   gem 'capybara'
 end
 
+gem 'foundation-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth'
