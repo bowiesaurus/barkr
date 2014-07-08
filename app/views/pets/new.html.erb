@@ -2,10 +2,9 @@
 
 <%= simple_form_for @pet do |f| %>
   <%= f.input :name, required: true, label: "Pet Name:"  %>
-  <!-- <%= f.label :img, "Image" %> -->
-  <!-- <%= f.file_field :img, required: true,  label: "Image" %>
-  -->
-  <%= f.input :breed, required: true, label: "Breed:" %>
+  <%= f.input :profile_photo, type: :file %>
+  <!-- <%= f.file_field :profile_photo, required: true,  label: "Image" %>
+ -->  <%= f.input :breed, required: true, label: "Breed:" %>
   <!-- will be PetFinder API dropdown for breeds -->
   <%= f.input :age, required: true %>
   <%= f.input :weight, required: true %>

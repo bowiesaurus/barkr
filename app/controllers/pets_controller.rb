@@ -13,7 +13,7 @@ class PetsController < ApplicationController
 
     if @pet.save
       flash[:notice] = 'Your pet profile was saved!'
-      redirect_to ###not sure which path yet###
+      redirect_to pets_path
     else
       flash.now[:notice] = 'Your pet profile could not be saved.'
       render :new
@@ -32,18 +32,18 @@ class PetsController < ApplicationController
 
   # end
 
-  def destroy
-    @pet = Pet.find(params[:id])
+  # def destroy
+  #   @pet = Pet.find(params[:id])
 
-    if current_user == @pet.user
-      @pet.destroy
-      redirect_to ###not sure which path###
-    end
-  end
+  #   if current_user == @pet.user
+  #     @pet.destroy
+  #     redirect_to pets_path
+  #   end
+  # end
 
   private
   def pet_params
     params.require(:pet).permit(:name, :breed, :age,
-      :color, :weight, :personality, :favorite_things, :owner_id)
+      :color, :weight, :personality, :favorite_things, :owner_id, :profile_photo)
   end
 end
