@@ -7,6 +7,10 @@ group :test, :development do
 end
 
 gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
+
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth'
