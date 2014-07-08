@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :pets
 
 
   root to: "users#index"
