@@ -1,5 +1,5 @@
 class Pet < ActiveRecord::Base
-  belongs_to :user
+  # belongs_to :owner, class_name: "User"
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
@@ -9,5 +9,5 @@ class Pet < ActiveRecord::Base
   validates :weight, numericality: true
   validates :personality, length: { maximum: 150, too_long: "%{count} characters is the maximum allowed" }
   validates :favorite_things, length: { maximum: 150, too_long: "%{count} characters is the maximum allowed" }
-  validates :owner_id, presence: true
+  # validates :owner, presence: true
 end
