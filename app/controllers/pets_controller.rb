@@ -20,17 +20,23 @@ class PetsController < ApplicationController
     end
   end
 
-  # def edit
-
-  # end
-
   def show
     @pet = Pet.find(params[:id])
   end
 
-  # def update
+  def edit
+    @pet = Pet.find(params[:id])
+  end
 
-  # end
+  def update
+    @pet = Pet.find(params[:id])
+
+    if @pet.update(pet_params)
+      redirect_to pets_path
+    else
+      render :edit
+    end
+  end
 
   # def destroy
   #   @pet = Pet.find(params[:id])
@@ -42,6 +48,7 @@ class PetsController < ApplicationController
   # end
 
   private
+
   def pet_params
     params.require(:pet).permit(:name, :breed, :age,
       :color, :weight, :personality, :favorite_things, :owner_id, :profile_photo)

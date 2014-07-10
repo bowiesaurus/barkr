@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 group :test, :development do
-  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'pry-rails'
 end
 
 gem 'foundation-rails'
+
 group :development do
   gem 'rails_layout'
 end

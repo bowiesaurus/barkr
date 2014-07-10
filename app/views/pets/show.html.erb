@@ -1,0 +1,18 @@
+<h2 class ="text-center"><%= @pet.name %></h2>
+<div class ="row text-center beard">
+  <%= image_tag(@pet.profile_photo) %><br>
+  <%= @pet.breed %><br>
+  <%= @pet.age %> yrs old<br>
+  <%= @pet.weight %> lbs
+
+</div><br>
+
+<div class = "text-center description">
+  <%= @pet.personality %><%= @pet.favorite_things %>
+</div><br>
+<hr>
+
+<p class = "text-center go_back">
+  <%= link_to "Go Back to Pets", pets_path %>
+</p>
+

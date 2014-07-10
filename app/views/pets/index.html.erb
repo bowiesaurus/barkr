@@ -4,9 +4,8 @@
   <div class="row">
     <% @pets.each do |pet| %>
     <div class="large-4 small-6 columns pull-left">
-<!--       <%= image_tag(beard.img.url(:thumb)) %>
- -->      <p class="beard-title"><%= link_to pet.name, pet_path(pet.id) %></p>
-      </div>
+    <p class="beard-title"><%= link_to pet.name, pet_path(pet.id) %></p>
+    </div>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+  devise_for :owners
+
   resources :pets
+
+  resources :owners do
+    resources :pets, shallow: true
+  end
 
   # devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 

@@ -1,5 +1,3 @@
-<h1>New Pet Profile</h1>
-
 <% if @pet.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
@@ -15,15 +13,13 @@
 <%= simple_form_for @pet, html: { multipart: true } do |f| %>
   <%= f.input :name, required: true, label: "Pet Name:"  %>
   <%= f.file_field :profile_photo, type: :file %>
-  <!-- <%= f.file_field :profile_photo, required: true,  label: "Image" %>
- -->  <%= f.input :breed, required: true, label: "Breed:" %>
+  <%= f.input :breed, required: true, label: "Breed:" %>
   <!-- will be PetFinder API dropdown for breeds -->
   <%= f.input :age, required: true %>
   <%= f.input :weight, required: true %>
   <%= f.input :personality, as: :text %>
   <%= f.input :favorite_things, as: :text %>
-  <%= f.button :submit %>
+  <%= f.button :submit, 'Save Changes' %>
 <% end %>
-
 
 
