@@ -1,0 +1,13 @@
+<h1>My Puppy Pals</h1>
+
+<ul>
+  <% for friendship in current_owner.friendships %>
+    <li>
+      <%= friendship.friend %>
+      (<%= link_to "remove", owner_friendships_path, method: :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<!-- <p><%= link_to "Find Puppy Pals", pets_path %></p>
+ -->

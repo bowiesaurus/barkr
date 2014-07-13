@@ -7,20 +7,20 @@ group :test, :development do
   gem 'pry-rails'
 end
 
-gem 'foundation-rails'
-
 group :development do
   gem 'rails_layout'
 end
 
-gem 'carrierwave'
+gem 'foundation-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
-
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'nokogiri'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

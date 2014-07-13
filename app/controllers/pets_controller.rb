@@ -1,6 +1,8 @@
 class PetsController < ApplicationController
+  # before_action :authenticate_user!, except: [:index, :show]
+
   def index
-    @pets = Pet.all
+    @pets = Pet.order("RANDOM()").limit(1)
   end
 
   def new
@@ -9,7 +11,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    # @pet.user_id = current_user.id if current_user
+    @pet.owner = current_owner
 
     if @pet.save
       flash[:notice] = 'Your pet profile was saved!'
@@ -38,14 +40,14 @@ class PetsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @pet = Pet.find(params[:id])
+  def destroy
+    @pet = Pet.find(params[:id])
 
-  #   if current_user == @pet.user
-  #     @pet.destroy
-  #     redirect_to pets_path
-  #   end
-  # end
+    if current_owner == @pet.owner
+      @pet.destroy
+      redirect_to pets_path
+    end
+  end
 
   private
 

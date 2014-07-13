@@ -1,6 +1,6 @@
 <h2 class ="text-center"><%= @pet.name %></h2>
 <div class ="row text-center beard">
-  <%= image_tag(@pet.profile_photo) %><br>
+  <%= image_tag(@pet.profile_photo.url(:thumb)) %><br>
   <%= @pet.breed %><br>
   <%= @pet.age %> yrs old<br>
   <%= @pet.weight %> lbs
@@ -15,4 +15,10 @@
 <p class = "text-center go_back">
   <%= link_to "Go Back to Pets", pets_path %>
 </p>
+
+<% if owner_signed_in? %>
+<p class = "text-center go_back">
+  <%= link_to "Edit Pet", edit_pet_path(@pet) %>
+</p>
+<% end %>
 

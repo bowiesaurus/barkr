@@ -1,13 +1,28 @@
-<h1>Random Pet</h1>
-
-<div class="large-12 columns">
-  <div class="row">
-    <% @pets.each do |pet| %>
-    <div class="large-4 small-6 columns pull-left">
-    <p class="beard-title"><%= link_to pet.name, pet_path(pet.id) %></p>
+<br>
+<div class ="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <% @pets.each do |pet| %>
+      <div class="large-4 small-6 columns pull-left">
+        <%= image_tag(pet.profile_photo) %>
+        <p class="pet-title"><%= link_to pet.name, pet_path(pet.id) %></p>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
+<br>
+<% if owner_signed_in? %>
+<div class="row">
+<% @pets.each do |pet| %>
+  <div>
+    <%= link_to "Wag", owner_friendships_path(pet.owner), method: :post %>
+  </div>
+  <% end %>
+</div>
 
+<div class="text-center">
 <%= link_to 'Create Pet Profile!', new_pet_path %>
+</div>
+<% end %>
+<br>

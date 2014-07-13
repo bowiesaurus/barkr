@@ -10,16 +10,19 @@
 </div>
 <% end %>
 
+<h2 class ="text-center">Edit <%= @pet.name %>'s Profile</h2>
+
 <%= simple_form_for @pet, html: { multipart: true } do |f| %>
   <%= f.input :name, required: true, label: "Pet Name:"  %>
   <%= f.file_field :profile_photo, type: :file %>
   <%= f.input :breed, required: true, label: "Breed:" %>
-  <!-- will be PetFinder API dropdown for breeds -->
   <%= f.input :age, required: true %>
   <%= f.input :weight, required: true %>
   <%= f.input :personality, as: :text %>
   <%= f.input :favorite_things, as: :text %>
   <%= f.button :submit, 'Save Changes' %>
+  <%= f.button :submit, 'Delete Pet' %>
 <% end %>
+
 
 

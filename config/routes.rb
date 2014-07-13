@@ -2,10 +2,18 @@ Rails.application.routes.draw do
   devise_for :owners
 
   resources :pets
+  # do
+  #   owner do
+  #     post 'upvote'
+  #   end
+  # end
 
   resources :owners do
     resources :pets, shallow: true
+    resources :friendships
   end
+
+
 
   # devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 

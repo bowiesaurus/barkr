@@ -1,6 +1,8 @@
 class Pet < ActiveRecord::Base
   belongs_to :owner
   mount_uploader :profile_photo, ProfilePhotoUploader
+  has_many :votes, dependent: :destroy
+  has_many :friends, through: :votes, class_name: 'Pet'
 
   validates :name, uniqueness: true
   validates :breed, presence: true
