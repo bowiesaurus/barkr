@@ -7,6 +7,8 @@ group :test, :development do
   gem 'pry-rails'
 end
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'rails_layout'
 end
