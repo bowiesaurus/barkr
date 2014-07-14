@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   def index
-    @friendships = Friendship.all
+    @friendships = current_owner.friendships
   end
 
   def show
@@ -8,11 +8,13 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = current_owner.friendships.build(params[:friend_id])
+    @friend = Pet.find(params[:pet_id])
+    @friendship = current_owner.friendships.build(friend: @friend)
 
     if @friendship.save
       flash[:notice] = "Added puppy pal."
       redirect_to root_url
+
     else
       flash[:error] = "Oops, we couldn't save that puppy pal."
       redirect_to root_url
@@ -23,6 +25,6 @@ class FriendshipsController < ApplicationController
     @friendship = current_owner.friendships.find(params[:id])
     @friendship.destroy
     flash[:notice] = "Removed puppy pal."
-    redirect_to root_url
+    redirect_to friendships_path
   end
 end

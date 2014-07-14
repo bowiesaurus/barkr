@@ -11,6 +11,7 @@ gem 'rails_12factor', group: :production
 
 group :development do
   gem 'rails_layout'
+  gem 'quiet_assets'
 end
 
 gem 'foundation-rails'

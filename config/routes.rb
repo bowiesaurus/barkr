@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
   devise_for :owners
 
-  resources :pets
-  # do
-  #   owner do
-  #     post 'upvote'
-  #   end
-  # end
+  resources :friendships, only: [:index, :destroy]
+
+  resources :pets do
+    resources :friendships, only: :create
+  end
 
   resources :owners do
     resources :pets, shallow: true
-    resources :friendships
+    resources :messages, shallow: true
   end
 
-
+  root to: "pets#index"
 
   # devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  root to: "pets#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

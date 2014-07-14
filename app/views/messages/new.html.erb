@@ -1,0 +1,9 @@
+<h1>Your Messages</h1>
+
+<%= simple_form_for @owner do |f| %>
+  <%= f.input :email %>
+  <%= f.input :body, as: :text %>
+  <%= f.button :submit %>
+<% end %>
+
+<!-- Going to want to see messages -->

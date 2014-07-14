@@ -2,7 +2,11 @@ class PetsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @pets = Pet.order("RANDOM()").limit(1)
+    if signed_in?
+      @pets = Pet.where("owner_id != ?", current_owner.id).order("RANDOM()").limit(1)
+    else
+      @pets = Pet.all
+    end
   end
 
   def new
