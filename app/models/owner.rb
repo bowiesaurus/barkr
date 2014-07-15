@@ -6,7 +6,6 @@ class Owner < ActiveRecord::Base
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
 
   has_many :messages, through: :friendships
-  # accepts_nested_attributes_for :messages
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

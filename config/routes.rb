@@ -3,13 +3,16 @@ Rails.application.routes.draw do
 
   resources :friendships, only: [:index, :destroy]
 
+  resources :messages, only: [:index]
+
   resources :pets do
-    resources :friendships, only: :create
+    resources :friendships, only: :create do
+      resources :messages, only: [:new, :create]
+    end
   end
 
   resources :owners do
     resources :pets, shallow: true
-    resources :messages, shallow: true
   end
 
   root to: "pets#index"

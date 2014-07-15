@@ -1,0 +1,24 @@
+<h2>Your Messages</h2>
+
+<h4>Received</h4>
+<ol>
+<% @received_messages.each do |message| %>
+  <li>
+    <%= message.sender.email %><br>
+    <%= message.title %><br>
+    <%= message.body %>
+  </li>
+<% end %>
+</ol>
+
+<h4>Sent</h4>
+<ol>
+<% @sent_messages.each do |message| %>
+  <li>
+    <%= message.recipient.email %><br>
+    <%= message.title %><br>
+    <%= message.body %>
+  </li>
+<% end %>
+</ol>
+

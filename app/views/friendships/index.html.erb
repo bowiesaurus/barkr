@@ -4,7 +4,7 @@
   <% @friendships.each do |friendship| %>
     <li>
       <%= friendship.friend.name %>:
-      <%= link_to 'Message', new_owner_message_path(current_owner) %>
+      <%= link_to 'Message', new_pet_friendship_message_path(friendship.friend, friendship) %>
       (<%= link_to 'Un-Pal', friendship_path(friendship), method: :delete %>)
     </li>
   <% end %>

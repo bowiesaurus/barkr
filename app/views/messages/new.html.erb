@@ -1,9 +1,9 @@
-<h1>Your Messages</h1>
+<h1>Message an Owner</h1>
 
-<%= simple_form_for @owner do |f| %>
-  <%= f.input :email %>
+<%= simple_form_for [@friend, @message], url: pet_friendship_messages_path do |f| %>
+  <%= f.input :title, as: :text %>
   <%= f.input :body, as: :text %>
   <%= f.button :submit %>
 <% end %>
 
-<!-- Going to want to see messages -->
+

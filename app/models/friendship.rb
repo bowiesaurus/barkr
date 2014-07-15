@@ -1,6 +1,6 @@
 class Friendship < ActiveRecord::Base
   belongs_to :owner
-  belongs_to :friend, :class_name => "Pet"
+  belongs_to :friend, class_name: "Pet"
 
   has_many :messages, as: :friendships, source: :owner
 

@@ -37,6 +37,10 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [400, 400]
   end
 
+  # version :avatar do
+  #   process :resize_to_fit => [100, 100]
+  # end
+
   def auto_orient
     manipulate! do |profile_photo|
       profile_photo.auto_orient

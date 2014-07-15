@@ -16,6 +16,7 @@
 <div class="row">
 <% @pets.each do |pet| %>
   <div>
+    <%= link_to "Skip", pets_path %>
     <%= link_to "Wag", pet_friendships_path(pet), method: :post %>
   </div>
   <% end %>

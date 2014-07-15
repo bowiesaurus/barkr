@@ -5,6 +5,9 @@
 
   <div><%= f.label :profile_photo %><br />
     <%= f.file_field :profile_photo, label: "Image" %>
+    <%= image_tag (current_owner.profile_photo.url(:thumb)) %>
+
+
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
