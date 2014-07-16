@@ -15,7 +15,7 @@
 <%= simple_form_for @pet, html: { multipart: true } do |f| %>
   <%= f.input :name, required: true, label: "Pet Name:"  %>
   <%= f.file_field :profile_photo, type: :file %>
-  <%= f.input :breed, required: true, label: "Breed:" %>
+  <%= f.input :breed, required: true, label: "Breed", collection: Pet::BREEDS %>
   <%= f.input :age, required: true %>
   <%= f.input :weight, required: true %>
   <%= f.input :personality, as: :text %>
