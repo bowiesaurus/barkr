@@ -7,11 +7,12 @@ feature "user signs out", %Q{
 } do
 
   it "user signs out" do
-    user = FactoryGirl.create(:user)
-    sign_in_as(user)
+    owner = FactoryGirl.create(:owner)
+    sign_in_as(owner)
 
     click_on "Sign out"
 
     expect(page).to have_content "Signed out successfully."
   end
 end
+

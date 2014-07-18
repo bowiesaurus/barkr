@@ -18,12 +18,14 @@
 <% @pets.each do |pet| %>
   <p class="button-left">
     <%= link_to pets_path do %>
-      <i class="fi-paw large"></i>
+      <i class="fi-paw"></i>
+      <%= "Pass" %>
     <% end %>
   </p>
   <p class="button-right">
     <%= link_to pet_friendships_path(pet), method: :post do %>
-      <i class="fi-heart large"></i>
+      <i class="fi-heart"></i>
+      <%= "Friend" %>
     <% end %>
   </p>
   </div>

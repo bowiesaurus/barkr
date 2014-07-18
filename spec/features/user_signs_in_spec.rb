@@ -7,12 +7,12 @@ feature "user signs in", %Q{
   } do
 
   it "user signs in a valid info" do
-    user = FactoryGirl.create(:user)
+    owner = FactoryGirl.create(:owner)
 
     visit new_owner_registration_path
 
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
+    fill_in "Email", with: owner.email
+    fill_in "Password", with: owner.password
     click_on "Sign in"
 
     expect(page).to have_content "Signed in successfully."
@@ -23,6 +23,5 @@ feature "user signs in", %Q{
     click_on "Sign in"
 
     expect(page).to have_content "Invalid email or password."
-  end
   end
 end
