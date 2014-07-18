@@ -6,15 +6,23 @@ feature "user signs in", %Q{
   So that I can interact with other my new friends
   } do
 
-  it "signs in a valid user" do
-    visit "/owners/sign_in"
+  it "user signs in a valid info" do
+    user = FactoryGirl.create(:user)
 
-    fill_in "Email", with: "sbmail@yahoo.com"
-    fill_in "Password", with: "password"
+    visit new_owner_registration_path
 
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
     click_on "Sign in"
 
     expect(page).to have_content "Signed in successfully."
-    expect(page).to have_content "Random Pet"
+  end
+
+  it "user signs in with invalid info" do
+    visit new_owner_registration_path
+    click_on "Sign in"
+
+    expect(page).to have_content "Invalid email or password."
+  end
   end
 end

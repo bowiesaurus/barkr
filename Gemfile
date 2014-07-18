@@ -5,6 +5,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 gem 'rails_12factor', group: :production
@@ -22,6 +23,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 gem 'mini_magick'
 gem 'nokogiri'
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "User signs up", %Q{
-  As an owser
+  As an owner
   I want to be register a new account
   So that I can post and interact with other dog owners
 }  do
