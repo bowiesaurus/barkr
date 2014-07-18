@@ -3,9 +3,13 @@
 <nav class="top-bar-section">
   <% if owner_signed_in? %>
     <ul class ="title-area">
+      <li class="divider"></li>
       <li class="name"><%= link_to 'Edit profile', edit_owner_registration_path %></li>
+      <li class="divider"></li>
       <li class="name"><%= link_to 'Puppy Pals', friendships_path %></li>
+      <li class="divider"></li>
       <li class="name"><%= link_to 'Messages', messages_path %></li>
+      <li class="divider"></li>
       <li class="name"><%= link_to 'Sign out', destroy_owner_session_path %></li>
     </ul>
   <% else %>

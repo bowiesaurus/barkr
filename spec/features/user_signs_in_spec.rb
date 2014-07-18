@@ -1,6 +1,11 @@
 require 'rails_helper'
 
-feature "User signs in through Sign in page"  do
+feature "user signs in", %Q{
+  As an owner
+  I want to sign in
+  So that I can interact with other my new friends
+  } do
+
   it "signs in a valid user" do
     visit "/owners/sign_in"
 

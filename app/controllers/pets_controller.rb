@@ -5,7 +5,7 @@ class PetsController < ApplicationController
     if signed_in?
       @pets = Pet.where("owner_id != ?", current_owner.id).order("RANDOM()").limit(1)
     else
-      @pets = Pet.all
+      @pets = Pet.order("RANDOM()").limit(1)
     end
   end
 

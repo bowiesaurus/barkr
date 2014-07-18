@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'foundation-icons';
+
+.button-right{
+  float: right;
+}
+
+.button-left {
+  float: left;
+}

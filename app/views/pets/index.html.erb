@@ -3,9 +3,9 @@
   <div class="large-12 columns">
     <div class="row">
       <% @pets.each do |pet| %>
-      <div class="large-4 small-6 columns pull-left">
+      <div class="small-6 small-centered columns pull-left">
         <%= image_tag(pet.profile_photo) %>
-        <p class="pet-title"><%= link_to pet.name, pet_path(pet.id) %></p>
+        <p class="text-center"><%= link_to pet.name, pet_path(pet.id) %></p>
       </div>
       <% end %>
     </div>
@@ -15,15 +15,23 @@
 <% if owner_signed_in? %>
 <div class="row">
 <% @pets.each do |pet| %>
-  <div>
-    <%= link_to "Skip", pets_path %>
-    <%= link_to "Wag", pet_friendships_path(pet), method: :post %>
+  <p class="button-left">
+    <%= link_to pets_path do %>
+      <i class="fi-paw large"></i>
+    <% end %>
+  </p>
+  <p class="button-right">
+    <%= link_to pet_friendships_path(pet), method: :post do %>
+      <i class="fi-heart large"></i>
+    <% end %>
+  </p>
   </div>
   <% end %>
 </div>
-
-<div class="text-center">
-<%= link_to 'Create Pet Profile!', new_pet_path %>
-</div>
-<% end %>
 <br>
+<br>
+<p class="text-center">
+<%= link_to 'Create Pet Profile!', new_pet_path %>
+</p>
+<% end %>
+
