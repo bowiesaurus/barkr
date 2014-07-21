@@ -11,8 +11,8 @@
   text-align: center;
  }
 
-.simple_form {
-  max-width: 500px;
+form {
+  max-width: 300px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -20,4 +20,16 @@
 h1 {
   text-align: center;
 }
+
+img {
+display: inline-block;
+vertical-align: middle;
+}
+
+.large-4 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
 
