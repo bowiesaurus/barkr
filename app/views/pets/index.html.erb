@@ -18,18 +18,22 @@
 
   <div class="row">
     <% @pets.each do |pet| %>
-      <p class="button-left">
+      <div class="button-left">
+        <div style="font-size: 42px">
         <%= link_to pets_path do %>
-          <i class="fi-paw large"></i>
+          <i class="fi-paw"></i>
+        </div>
           <%= "Pass" %>
         <% end %>
-      </p>
-      <p class="button-right">
+      </div>
+      <div class="button-right">
+        <div style="font-size: 36px">
         <%= link_to pet_friendships_path(pet), method: :post do %>
-          <i class="fi-heart large"></i>
+          <i class="fi-heart"></i>
+        </div>
           <%= "Friend" %>
         <% end %>
-      </p>
+      </div>
     </div>
   <% end %>
 </div>
@@ -45,8 +49,7 @@
 <div class="row">
 <div class="large-12 columns">
   <div class="row">
-
-    <img alt="dog park" src="https://s3.amazonaws.com/barkr2-development/uploads/UFhRrA1405908334.jpg?X-Amz-Date=20140721T154639Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=0e25222847953561a8e9b42bc667beaac999c1533a59670d5957e303e2e7988e&X-Amz-Credential=ASIAJ6UO7OXMTHBVOHKQ/20140721/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEBkawAKnl7WUm5mCGiJAXJq7J1ww7G0YnybS1PvX%2BYN2u3ptejJ7mSy8vMCiDdOPz6T01v0NBzxjgbSu%2BV6TF3olT1d3Wy9yIdZzdhKAhVS3TSPcNzfn9BOUkVoGntrT/Hx1dq8iOz/cp9qxNgJngmHJdfNMEjNCYuoj5%2BSBSQ9vF%2BEX7wbCH/71BRoU2JWlOvRuKUkRzVTiFk1cadrAoTWpvoSxzd9IaoGZtlV5gcEPRA3zgWs5oE4hq08yYfK/UptcHvoY4Q4It1TL1BSApbzJ1ZaikHLyl3oowz/WwiLXZaNc964tULwZoqWUQjjVIhNcCtWiCbyEhdzF2xsuWNbcD/hzVBCVRzFsZYrypQw7L0jgQzEUcN9LGuIy6bMcO9gcbm/9q%2BOWIile4iC9Tw2Yf1SoI5dWya9MRsfTYUncCwUtIiDV67SeBQ%3D%3D">
+    <img alt="dog park" src="/assets/UFhRrA1405908334.jpg">
   </div>
 <% end %>
 
