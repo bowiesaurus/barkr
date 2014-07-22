@@ -1,28 +1,7 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a dog social connection service built on Rails and styled with Foundation. The user registration process is powered by Devise and all form interactions are organized with Simple Form. Owners can easily upload their favorite pet’s photos with Carrierwave and then friend or message other pets. 
 
-Things you may want to cover:
+![Home Page](https://raw.githubusercontent.com/bowiesaurus/barkr/master/public/Screen%20Shot%202014-07-22%20at%2012.29.40%20PM.png)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![User Main Page](https://raw.githubusercontent.com/bowiesaurus/barkr/master/public/Screen%20Shot%202014-07-22%20at%2012.30.58%20PM.png)
