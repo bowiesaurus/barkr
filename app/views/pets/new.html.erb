@@ -15,13 +15,14 @@
 </div>
 <% end %>
 
-
+<div class="form-container">
+<div class="medium-4 medium-centered columns">
 <%= simple_form_for @pet, html: { multipart: true } do |f| %>
   <%= f.input :name, required: true, label: "Pet Name:"  %>
   <%= f.file_field :profile_photo, type: :file %>
   <%= f.input :breed, required: true, label: "Breed", collection: Pet::BREEDS %>
   <%= f.input :age, required: true %>
-  <%= f.input :gender, label: 'What is the sex?', collection: [ ['F', 'Female'], ['M', 'Male']], as: :radio_buttons, label_method: :last, value_method: :first, checked: @pet.gender %>
+  <%= f.input :gender, label: 'Gender:', collection: [ ['F', 'Female'], ['M', 'Male']], as: :radio_buttons, label_method: :last, value_method: :first, checked: @pet.gender %>
   <%= f.input :weight, required: true %>
   <%= f.input :personality, as: :text %>
   <%= f.input :favorite_things, as: :text %>
@@ -29,7 +30,7 @@
 <% end %>
 </div>
 </div>
-</div>
+
 
 
 
