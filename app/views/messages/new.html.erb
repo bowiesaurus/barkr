@@ -1,6 +1,8 @@
 <h1>Message an Owner</h1>
 
 <%= simple_form_for [@friend, @message], url: pet_friendship_messages_path do |f| %>
+  <%= f.hidden_field :sender, value: current_owner.id %>
+  <%= f.hidden_field :recipient, value: pet.owner.id %>
   <%= f.input :title, as: :text %>
   <%= f.input :body, as: :text %>
   <%= f.button :submit %>
